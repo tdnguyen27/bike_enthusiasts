@@ -4,15 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bike Enthusiasts</title>
+    <link rel="stylesheet" href="global.css" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+    <!-- Mapbox GL JS CSS -->
+    <link
+    href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css"
+    rel="stylesheet"
+    />
+    <script src="map.js" type="module"></script>
 </head>
 <body>
-    <h1>🚴🏼‍♀️ Bike Enthusiasts</h1>
-    <p>This is an interactive Mapbox visualizing bike traffic in the Boston area during different times of the day. 
-        There is the interactive feature that allows the users to pan and zoom the map, and a slider at the top right 
-        that allows the user to filter the data for traffic at specific times of the day. The circles will change size 
-        and color accordingly. The circles represent individual BlueBike stations. The size of each circle represents 
-        the amount of traffic at each station, while the color represents whether most traffic is entering or leaving 
-        the station.
-    </p>
+    <div class="content">
+        <h1>🚴🏼‍♀️ Bike Enthusiasts</h1>
+        <p>
+            This is an interactive Mapbox visualizing bike traffic in the Boston area during different times of the day. 
+            There is the interactive feature that allows the users to pan and zoom the map, and a slider at the top right 
+            that allows the user to filter the data for traffic at specific times of the day. The circles will change size 
+            and color accordingly. The circles represent individual BlueBike stations. The size of each circle represents 
+            the amount of traffic at each station, while the color represents whether most traffic is entering or leaving 
+            the station.
+        </p>
+    </div>
+    <div id="map">
+        <svg></svg>
+    </div>
 </body>
 </html>
