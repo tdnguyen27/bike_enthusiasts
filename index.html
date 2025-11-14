@@ -16,7 +16,15 @@
 </head>
 <body>
     <div class="content">
-        <h1>🚴🏼‍♀️ Bike Enthusiasts</h1>
+        <header class="slider-container">
+            <h1>🚴🏼‍♀️ Bike Enthusiasts</h1>
+            <label id="slider-label">Filter by time:
+                <input id="time-slider" type="range" min="-1" max="1440" value="-1">
+                <time id="selected-time" datetime="23:59">11:59 PM</time>
+            </label>
+            <em id="any-time-label">(any time)</em>
+        </header>
+
         <p>
             This is an interactive Mapbox visualizing bike traffic in the Boston area during different times of the day. 
             There is the interactive feature that allows the users to pan and zoom the map, and a slider at the top right 
@@ -26,6 +34,7 @@
             the station.
         </p>
     </div>
+
     <div id="map">
         <svg></svg>
     </div>

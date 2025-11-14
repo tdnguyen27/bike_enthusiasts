@@ -36,3 +36,25 @@ body {
 #map svg circle {
     pointer-events: auto;
 }
+.slider-container {
+  display: flex;
+  gap: 1em;
+  align-items: baseline;
+}
+#slider-label {
+  margin-left: auto;
+  white-space: nowrap;
+}
+#time-slider {
+  display: inline-block;
+  vertical-align: middle;
+}
+#selected-time {
+  display: block;
+  text-align: right;
+}
+#any-time-label {
+  display: block;
+  color: #cccccc;
+  font-style: italic;
+}
