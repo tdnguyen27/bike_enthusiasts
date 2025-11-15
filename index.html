@@ -18,11 +18,13 @@
     <div class="content">
         <header class="slider-container">
             <h1>🚴🏼‍♀️ Bike Enthusiasts</h1>
-            <label id="slider-label">Filter by time:
-                <input id="time-slider" type="range" min="-1" max="1440" value="-1">
-                <time id="selected-time" datetime="23:59">11:59 PM</time>
-            </label>
-            <em id="any-time-label">(any time)</em>
+            <div class="slider-block">
+                <label id="slider-label">Filter by time:
+                    <input id="time-slider" type="range" min="-1" max="1440" value="-1">
+                    <time id="selected-time" datetime="23:59"></time>
+                </label>
+                <em id="any-time">(any time)</em>
+            </div>
         </header>
 
         <p>
@@ -38,5 +40,12 @@
     <div id="map">
         <svg></svg>
     </div>
+
+    <div class="legend">
+        <div style="--departure-ratio: 1">More departures</div>
+        <div style="--departure-ratio: 0.5">Balanced</div>
+        <div style="--departure-ratio: 0">More arrivals</div>
+    </div>
+
 </body>
 </html>

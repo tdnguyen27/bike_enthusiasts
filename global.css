@@ -15,8 +15,8 @@ body {
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  justify-content: center;
+  align-items: center;
 }
 #map {
   width: 90%; /* Adjust width to your desired size */
@@ -25,36 +25,72 @@ body {
   border-radius: 8px; /* Optional: rounded corners */
 }
 #map svg {
-  background: yellow;
-  opacity: 50%;
   position: absolute;
   z-index: 1;
   width: 100%;
   height: 100%;
   pointer-events: none;
 }
+/* Step 6.2 — shared color variables */
+#map svg circle,
+.legend > div {
+    --color-departures: blueViolet;
+    --color-arrivals: darkOliveGreen;
+    --color: color-mix(
+        in oklch,
+        var(--color-departures) calc(100% * var(--departure-ratio)),
+        var(--color-arrivals)
+    );
+}
 #map svg circle {
     pointer-events: auto;
+    fill: var(--color);
+}
+.legend {
+    display: flex;
+    margin-block: 1rem;   /* vertical spacing above/below */
+    gap: 1px;             /* tiny gap so colors don’t touch */
+    margin-inline: auto;
+    width: 90%;
+    max-width: 70em;
+    border-radius: 6px;
+    height: 7%;
+}
+.legend > div {
+    flex: 1;
+    text-align: center;
+    padding: 0.75rem 0.75rem;   /* mostly horizontal padding */
+    font-weight: 600;
+    line-height: 1.3;
+    color: white;        /* ensure readable text */
+    background: var(--color);
 }
 .slider-container {
   display: flex;
   gap: 1em;
   align-items: baseline;
 }
+.slider-block {
+  display: flex;
+  flex-direction: column;   /* stack label on top of em */
+  align-items: flex-end;    /* right-align slider + time + em */
+  margin-left: auto;
+}
 #slider-label {
   margin-left: auto;
   white-space: nowrap;
 }
 #time-slider {
-  display: inline-block;
+  width: 260px;
   vertical-align: middle;
 }
-#selected-time {
-  display: block;
-  text-align: right;
-}
-#any-time-label {
-  display: block;
+#any-time {
   color: #cccccc;
   font-style: italic;
+  margin-top: 0.2rem;
+}
+#selected-time {
+  display: block;      /* forces a new line inside the label */
+  text-align: right;   /* aligns the time under the right edge of the slider */
+  margin-top: 0.2rem;  /* tiny spacing from the slider (optional) */
 }
